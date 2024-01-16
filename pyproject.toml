@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "cloc-tracker"
+version = "0.1.0"
+description = ""
+authors = ["Anderson Arroyo <a.arroyo@pucp.pe>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.1.4"
+pip = "^23.3.2"
+gitpython = "^3.1.41"
+requests = "^2.31.0"
+openpyxl = "^3.1.2"
+tqdm = "^4.66.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.28.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
