@@ -15,7 +15,8 @@ GITHUB_REPO = config["GITHUB_REPO"]
 GITHUB_TOKEN = config["GITHUB_TOKEN"]
 LOCAL_REPO_PATH = config["LOCAL_REPO_PATH"]
 USERS_BRANCHES = [(user["USER"], user["BRANCH"]) for user in config["USERS_BRANCHES"]]
-LIB_FOLDER_PATH = config["LIB_FOLDER_PATH"]
+LIB_FOLDER_PATHS = config["LIB_FOLDER_PATHS"]
+EXCLUDE_FILE_SUFFIXES = config["EXCLUDE_FILE_SUFFIXES"]
 EXCEL_FILE = config["EXCEL_FILE"]
 
 # GitHub API Headers
@@ -49,7 +50,9 @@ def get_commit_stats(repo, commit_hash):
     for stat in stats:
         a, r, file_path = stat.split()[:3]
 
-        if file_path.startswith(LIB_FOLDER_PATH):
+        if any(
+            file_path.startswith(lib_path) for lib_path in LIB_FOLDER_PATHS
+        ) and not any(file_path.endswith(suffix) for suffix in EXCLUDE_FILE_SUFFIXES):
             added += int(a)
             removed += int(r)
 
