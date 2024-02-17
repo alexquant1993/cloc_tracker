@@ -25,7 +25,13 @@ Example `config.json` structure:
         {"USER": "username1", "BRANCH": "branch1"},
         {"USER": "username2", "BRANCH": "branch2"}
     ],
-    "LIB_FOLDER_PATH": "folder_path",
+    "LIB_FOLDER_PATHS": [
+        "folder/path1/",
+        "folder/path2/"
+    ],
+    "EXCLUDE_FILE_SUFFIXES": [
+        ".g.dart" // For instance, exclude code generated files
+    ],
     "EXCEL_FILE": "output_file_name.xlsx"
 }
 ```
