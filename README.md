@@ -30,7 +30,12 @@ Example `config.json` structure:
         "folder/path2/"
     ],
     "EXCLUDE_FILE_SUFFIXES": [
-        ".g.dart" // For instance, exclude code generated files
+        ".g.dart"
+    ],
+    "EXCLUDE_FILE_PATTERNS": [
+        "test/",
+        "docs/",
+        "README"
     ],
     "EXCEL_FILE": "output_file_name.xlsx"
 }
